@@ -1,0 +1,8 @@
+
+{
+    "api_url":"http://127.0.0.1:8000",
+    "db_name": "database/chroma",
+    "documents_folder": "documents/",
+    "llm_name": "llama3.2:1b",
+    "embedding_model_name": "nomic-embed-text"
+}
