@@ -5,7 +5,7 @@ This project is a Retrieval-Augmented Generation (RAG) based chatbot that answer
 Use case: As a simple use case, we created a chatbot that answers questions about Brazilian literature. To create our database, we used open-access Brazilian literature PDFs.
 
 <div align="center">
-  <img src="screenshots/llm_response.png" alt="LLM response" width="100%"  style="margin-bottom: 20px;">
+  <img src="figures/llm_response.png" alt="LLM response" width="100%"  style="margin-bottom: 20px;">
 </div>
 
 ## Features
@@ -52,7 +52,7 @@ Use case: As a simple use case, we created a chatbot that answers questions abou
 ### How It Works
 
 <div align="center">
-  <img src="screenshots/RAG_pipeline.jpg" alt="RAG pipeline" width="100%"  style="margin-bottom: 20px;">
+  <img src="figures/RAG_pipeline.jpg" alt="RAG pipeline" width="100%"  style="margin-bottom: 20px;">
 </div>
 
 1. RAG Pipeline:
