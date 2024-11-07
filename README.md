@@ -57,6 +57,7 @@ Use case: As a simple use case, we created a chatbot that answers questions abou
 
 1. RAG Pipeline:
 
+- **Loading**: initially, documents are loaded and text is extracted. Different data formats can be used (CSV, JSON, PDF), but initially we are working only with PDF.
 - **Chunking**: PDFs are divided into chunks based on the text structure.
 - **Embeddings**: Each chunk is embedded using the `nomic-embed-text` model.
 - **Vector Storage**: Embeddings are stored in ChromaDB for efficient retrieval.
