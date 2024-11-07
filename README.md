@@ -3,6 +3,7 @@
 This project is a Retrieval-Augmented Generation (RAG) based chatbot that answers questions using an LLM model and a vector database for document retrieval. The project is built with FastAPI, Gradio, and LangChain, providing a robust setup for interacting with a language model over a dataset created from PDFs.
 
 Use case: As a simple use case, we created a chatbot that answers questions about Brazilian literature. To create our database, we used open-access Brazilian literature PDFs.
+
 <div align="center">
   <img src="screenshots/llm_response.png" alt="LLM response" width="100%"  style="margin-bottom: 20px;">
 </div>
@@ -49,6 +50,11 @@ Use case: As a simple use case, we created a chatbot that answers questions abou
 
 
 ### How It Works
+
+<div align="center">
+  <img src="screenshots/RAG_pipeline.jpg" alt="RAG pipeline" width="100%"  style="margin-bottom: 20px;">
+</div>
+
 1. RAG Pipeline:
 
 - **Chunking**: PDFs are divided into chunks based on the text structure.
