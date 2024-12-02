@@ -1,3 +1,6 @@
+import sys
+sys.path.append('../../')
+
 from langchain.schema.document import Document
 from langchain_chroma import Chroma
 
@@ -13,9 +16,9 @@ from ..utils.embeddings_handler import Embeddings
 
 class DataBaseManager():
 
-    def __init__(self) -> None:
+    def __init__(self, config_file:str) -> None:
 
-        fp = open('config.json')
+        fp = open(config_file)
         config = json.load(fp)
         fp.close()
 
@@ -38,10 +41,15 @@ class DataBaseManager():
         last_page_id = None,
         current_chunk_index = 0
 
-        for chunk in chunks:
+        for i, chunk in enumerate(chunks):
+            
+            if 'page' not in chunk:
+                page = i
+            else:
+                page = chunk.metadata['page']
 
             source = chunk.metadata['source']
-            page = chunk.metadata['page']
+            
             current_page_id = f'{source}:{page}'
 
             # if the current page ID is the same of the last one, we have to increment
@@ -80,23 +88,23 @@ class DataBaseManager():
             if chunk.metadata['id'] not in existing_ids:
                 new_chunks.append(chunk)
 
-
         if len(new_chunks):
             print(f"👉 Adding new documents: {len(new_chunks)}")
 
             new_chunks_ids = [chunk.metadata['id'] for chunk in new_chunks]
-            self.db.add_documents(new_chunks, ids=new_chunks_ids)
+            db.add_documents(documents=new_chunks, ids=new_chunks_ids)
             # db.persist()
 
         else:
             print("✅ No new documents to add")
 
-    def get_existing_data(self, CHROMA_PATH:str=None):
+    def get_existing_data(self):
         
         db = self.get_db_connection()
-        existing_items = db.get(include=[]) # ids that are always included by default
+        # existing_items = db.get(include=[]) # ids that are always included by default
+        existing_items = db.get()
 
-        print(existing_items)
+        return existing_items
 
     def clear_database(self, CHROMA_PATH:str=None):
 

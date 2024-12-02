@@ -1,0 +1,10 @@
+{
+    "main_url":"https://www.congressonacional.leg.br/comissoes-mistas/cmo/quadro-de-tramitacao/-/quadro/PLN/2024",
+    "result_path":"data/",
+    
+    "api_url":"http://127.0.0.1:8000",
+    "db_name": "examples/projetos_leis/database/chroma",
+    "documents_folder": "documents/",
+    "llm_name": "llama3.2:1b",
+    "embedding_model_name": "nomic-embed-text"
+}

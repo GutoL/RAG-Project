@@ -2,4 +2,4 @@
 
 ollama serve #&
 
-# systemctl stop ollama.service
+# sudo systemctl stop ollama.service
